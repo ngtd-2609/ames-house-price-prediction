@@ -1,0 +1,1613 @@
+{
+  "target": "SalePrice",
+  "id_excluded": true,
+  "feature_count": 79,
+  "policy": {
+    "single_prediction_policy": "missing fields are filled with train-only defaults by prepare_raw_frame",
+    "batch_prediction_policy": "CSV must contain all 79 required feature columns; SalePrice is dropped before prediction",
+    "missing_columns_policy": "single prediction fills defaults; batch prediction rejects missing required feature columns with a friendly error",
+    "extra_columns_policy": "extra columns are preserved in batch output but excluded from model input",
+    "unknown_category_policy": "accepted by OneHotEncoder(handle_unknown='ignore')",
+    "invalid_type_policy": "numeric parse failures are rejected with column-specific friendly errors",
+    "range_policy": "numeric values outside train-observed min/max are rejected before prediction",
+    "semantic_missing_policy": "NA/None tokens that encode absence are preserved as categories; true NaN in categorical fields becomes Missing"
+  },
+  "fields": [
+    {
+      "name": "MSSubClass",
+      "label": "Loại nhà theo mã xây dựng",
+      "description": "Loại nhà theo mã xây dựng",
+      "unit": "mã",
+      "group": "General",
+      "kind": "category",
+      "default": "20",
+      "options": [
+        "20",
+        "60",
+        "50",
+        "120",
+        "30",
+        "80",
+        "160",
+        "70",
+        "90",
+        "190",
+        "85",
+        "75",
+        "45",
+        "180",
+        "40"
+      ],
+      "option_labels": {
+        "20": "20",
+        "60": "60",
+        "50": "50",
+        "120": "120",
+        "30": "30",
+        "80": "80",
+        "160": "160",
+        "70": "70",
+        "90": "90",
+        "190": "190",
+        "85": "85",
+        "75": "75",
+        "45": "45",
+        "180": "180",
+        "40": "40"
+      },
+      "nullable": false
+    },
+    {
+      "name": "MSZoning",
+      "label": "Khu vực quy hoạch",
+      "description": "Khu vực quy hoạch",
+      "unit": null,
+      "group": "General",
+      "kind": "category",
+      "default": "RL",
+      "options": [
+        "RL",
+        "RM",
+        "FV",
+        "RH",
+        "C (all)"
+      ],
+      "option_labels": {
+        "RL": "Residential Low Density",
+        "RM": "Residential Medium Density",
+        "FV": "Floating Village Residential",
+        "RH": "Residential High Density",
+        "C (all)": "Commercial"
+      },
+      "nullable": false
+    },
+    {
+      "name": "LotFrontage",
+      "label": "Chiều dài mặt tiền",
+      "description": "Chiều dài mặt tiền",
+      "unit": "feet",
+      "group": "Location/Lot",
+      "kind": "number",
+      "default": 70.0,
+      "min": 21.0,
+      "max": 313.0,
+      "nullable": true
+    },
+    {
+      "name": "LotArea",
+      "label": "Diện tích lô đất",
+      "description": "Diện tích lô đất",
+      "unit": "ft²",
+      "group": "Location/Lot",
+      "kind": "number",
+      "default": 9545.0,
+      "min": 1300.0,
+      "max": 215245.0,
+      "nullable": false
+    },
+    {
+      "name": "Street",
+      "label": "Loại đường tiếp cận",
+      "description": "Loại đường tiếp cận",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Pave",
+      "options": [
+        "Pave",
+        "Grvl"
+      ],
+      "option_labels": {
+        "Pave": "Pave",
+        "Grvl": "Grvl"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Alley",
+      "label": "Loại hẻm tiếp cận",
+      "description": "Loại hẻm tiếp cận",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "NA",
+      "options": [
+        "NA",
+        "Grvl",
+        "Pave"
+      ],
+      "option_labels": {
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Grvl": "Grvl",
+        "Pave": "Pave"
+      },
+      "nullable": false
+    },
+    {
+      "name": "LotShape",
+      "label": "Hình dạng lô đất",
+      "description": "Hình dạng lô đất",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Reg",
+      "options": [
+        "Reg",
+        "IR1",
+        "IR2",
+        "IR3"
+      ],
+      "option_labels": {
+        "Reg": "Reg",
+        "IR1": "IR1",
+        "IR2": "IR2",
+        "IR3": "IR3"
+      },
+      "nullable": false
+    },
+    {
+      "name": "LandContour",
+      "label": "Địa hình lô đất",
+      "description": "Địa hình lô đất",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Lvl",
+      "options": [
+        "Lvl",
+        "Bnk",
+        "HLS",
+        "Low"
+      ],
+      "option_labels": {
+        "Lvl": "Lvl",
+        "Bnk": "Bnk",
+        "HLS": "HLS",
+        "Low": "Low"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Utilities",
+      "label": "Tiện ích công cộng",
+      "description": "Tiện ích công cộng",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "AllPub",
+      "options": [
+        "AllPub"
+      ],
+      "option_labels": {
+        "AllPub": "AllPub"
+      },
+      "nullable": false
+    },
+    {
+      "name": "LotConfig",
+      "label": "Vị trí lô đất",
+      "description": "Vị trí lô đất",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Inside",
+      "options": [
+        "Inside",
+        "Corner",
+        "CulDSac",
+        "FR2",
+        "FR3"
+      ],
+      "option_labels": {
+        "Inside": "Inside",
+        "Corner": "Corner",
+        "CulDSac": "CulDSac",
+        "FR2": "FR2",
+        "FR3": "FR3"
+      },
+      "nullable": false
+    },
+    {
+      "name": "LandSlope",
+      "label": "Độ dốc lô đất",
+      "description": "Độ dốc lô đất",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Gtl",
+      "options": [
+        "Gtl",
+        "Mod",
+        "Sev"
+      ],
+      "option_labels": {
+        "Gtl": "Gtl",
+        "Mod": "Mod",
+        "Sev": "Sev"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Neighborhood",
+      "label": "Khu dân cư",
+      "description": "Khu dân cư",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "NAmes",
+      "options": [
+        "NAmes",
+        "CollgCr",
+        "OldTown",
+        "Edwards",
+        "Somerst",
+        "Sawyer",
+        "NWAmes",
+        "NridgHt",
+        "Gilbert",
+        "SawyerW",
+        "BrkSide",
+        "Crawfor",
+        "Mitchel",
+        "NoRidge",
+        "Timber",
+        "IDOTRR",
+        "ClearCr",
+        "StoneBr",
+        "SWISU",
+        "Blmngtn",
+        "BrDale",
+        "Veenker",
+        "MeadowV",
+        "NPkVill",
+        "Blueste"
+      ],
+      "option_labels": {
+        "NAmes": "NAmes",
+        "CollgCr": "CollgCr",
+        "OldTown": "OldTown",
+        "Edwards": "Edwards",
+        "Somerst": "Somerst",
+        "Sawyer": "Sawyer",
+        "NWAmes": "NWAmes",
+        "NridgHt": "NridgHt",
+        "Gilbert": "Gilbert",
+        "SawyerW": "SawyerW",
+        "BrkSide": "BrkSide",
+        "Crawfor": "Crawfor",
+        "Mitchel": "Mitchel",
+        "NoRidge": "NoRidge",
+        "Timber": "Timber",
+        "IDOTRR": "IDOTRR",
+        "ClearCr": "ClearCr",
+        "StoneBr": "StoneBr",
+        "SWISU": "SWISU",
+        "Blmngtn": "Blmngtn",
+        "BrDale": "BrDale",
+        "Veenker": "Veenker",
+        "MeadowV": "MeadowV",
+        "NPkVill": "NPkVill",
+        "Blueste": "Blueste"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Condition1",
+      "label": "Điều kiện lân cận chính",
+      "description": "Điều kiện lân cận chính",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Norm",
+      "options": [
+        "Norm",
+        "Feedr",
+        "Artery",
+        "RRAn",
+        "PosN",
+        "RRAe",
+        "PosA",
+        "RRNn",
+        "RRNe"
+      ],
+      "option_labels": {
+        "Norm": "Norm",
+        "Feedr": "Feedr",
+        "Artery": "Artery",
+        "RRAn": "RRAn",
+        "PosN": "PosN",
+        "RRAe": "RRAe",
+        "PosA": "PosA",
+        "RRNn": "RRNn",
+        "RRNe": "RRNe"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Condition2",
+      "label": "Điều kiện lân cận phụ",
+      "description": "Điều kiện lân cận phụ",
+      "unit": null,
+      "group": "Location/Lot",
+      "kind": "category",
+      "default": "Norm",
+      "options": [
+        "Norm",
+        "Feedr",
+        "Artery",
+        "PosN",
+        "RRNn",
+        "PosA",
+        "RRAn",
+        "RRAe"
+      ],
+      "option_labels": {
+        "Norm": "Norm",
+        "Feedr": "Feedr",
+        "Artery": "Artery",
+        "PosN": "PosN",
+        "RRNn": "RRNn",
+        "PosA": "PosA",
+        "RRAn": "RRAn",
+        "RRAe": "RRAe"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BldgType",
+      "label": "Kiểu công trình",
+      "description": "Kiểu công trình",
+      "unit": null,
+      "group": "Building",
+      "kind": "category",
+      "default": "1Fam",
+      "options": [
+        "1Fam",
+        "TwnhsE",
+        "Duplex",
+        "Twnhs",
+        "2fmCon"
+      ],
+      "option_labels": {
+        "1Fam": "1Fam",
+        "TwnhsE": "TwnhsE",
+        "Duplex": "Duplex",
+        "Twnhs": "Twnhs",
+        "2fmCon": "2fmCon"
+      },
+      "nullable": false
+    },
+    {
+      "name": "HouseStyle",
+      "label": "Kiểu nhà",
+      "description": "Kiểu nhà",
+      "unit": null,
+      "group": "Building",
+      "kind": "category",
+      "default": "1Story",
+      "options": [
+        "1Story",
+        "2Story",
+        "1.5Fin",
+        "SLvl",
+        "SFoyer",
+        "1.5Unf",
+        "2.5Unf",
+        "2.5Fin"
+      ],
+      "option_labels": {
+        "1Story": "1Story",
+        "2Story": "2Story",
+        "1.5Fin": "1.5Fin",
+        "SLvl": "SLvl",
+        "SFoyer": "SFoyer",
+        "1.5Unf": "1.5Unf",
+        "2.5Unf": "2.5Unf",
+        "2.5Fin": "2.5Fin"
+      },
+      "nullable": false
+    },
+    {
+      "name": "OverallQual",
+      "label": "Chất lượng tổng thể",
+      "description": "Chất lượng tổng thể",
+      "unit": "thang 1-10",
+      "group": "Building",
+      "kind": "number",
+      "default": 6.0,
+      "min": 1.0,
+      "max": 10.0,
+      "nullable": false
+    },
+    {
+      "name": "OverallCond",
+      "label": "Tình trạng tổng thể",
+      "description": "Tình trạng tổng thể",
+      "unit": "thang 1-10",
+      "group": "Building",
+      "kind": "number",
+      "default": 5.0,
+      "min": 1.0,
+      "max": 9.0,
+      "nullable": false
+    },
+    {
+      "name": "YearBuilt",
+      "label": "Năm xây dựng",
+      "description": "Năm xây dựng",
+      "unit": "năm",
+      "group": "Building",
+      "kind": "number",
+      "default": 1972.5,
+      "min": 1872.0,
+      "max": 2010.0,
+      "nullable": false
+    },
+    {
+      "name": "YearRemodAdd",
+      "label": "Năm cải tạo gần nhất",
+      "description": "Năm cải tạo gần nhất",
+      "unit": "năm",
+      "group": "Building",
+      "kind": "number",
+      "default": 1993.0,
+      "min": 1950.0,
+      "max": 2010.0,
+      "nullable": false
+    },
+    {
+      "name": "RoofStyle",
+      "label": "Kiểu mái",
+      "description": "Kiểu mái",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "Gable",
+      "options": [
+        "Gable",
+        "Hip",
+        "Flat",
+        "Gambrel",
+        "Mansard",
+        "Shed"
+      ],
+      "option_labels": {
+        "Gable": "Gable",
+        "Hip": "Hip",
+        "Flat": "Flat",
+        "Gambrel": "Gambrel",
+        "Mansard": "Mansard",
+        "Shed": "Shed"
+      },
+      "nullable": false
+    },
+    {
+      "name": "RoofMatl",
+      "label": "Vật liệu mái",
+      "description": "Vật liệu mái",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "CompShg",
+      "options": [
+        "CompShg",
+        "Tar&Grv",
+        "WdShake",
+        "WdShngl",
+        "Metal",
+        "Membran",
+        "Roll",
+        "ClyTile"
+      ],
+      "option_labels": {
+        "CompShg": "CompShg",
+        "Tar&Grv": "Tar&Grv",
+        "WdShake": "WdShake",
+        "WdShngl": "WdShngl",
+        "Metal": "Metal",
+        "Membran": "Membran",
+        "Roll": "Roll",
+        "ClyTile": "ClyTile"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Exterior1st",
+      "label": "Vật liệu ngoại thất chính",
+      "description": "Vật liệu ngoại thất chính",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "VinylSd",
+      "options": [
+        "VinylSd",
+        "HdBoard",
+        "MetalSd",
+        "Wd Sdng",
+        "Plywood",
+        "CemntBd",
+        "BrkFace",
+        "WdShing",
+        "Stucco",
+        "AsbShng",
+        "BrkComm",
+        "Stone",
+        "AsphShn",
+        "ImStucc",
+        "CBlock"
+      ],
+      "option_labels": {
+        "VinylSd": "VinylSd",
+        "HdBoard": "HdBoard",
+        "MetalSd": "MetalSd",
+        "Wd Sdng": "Wd Sdng",
+        "Plywood": "Plywood",
+        "CemntBd": "CemntBd",
+        "BrkFace": "BrkFace",
+        "WdShing": "WdShing",
+        "Stucco": "Stucco",
+        "AsbShng": "AsbShng",
+        "BrkComm": "BrkComm",
+        "Stone": "Stone",
+        "AsphShn": "AsphShn",
+        "ImStucc": "ImStucc",
+        "CBlock": "CBlock"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Exterior2nd",
+      "label": "Vật liệu ngoại thất phụ",
+      "description": "Vật liệu ngoại thất phụ",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "VinylSd",
+      "options": [
+        "VinylSd",
+        "MetalSd",
+        "HdBoard",
+        "Wd Sdng",
+        "Plywood",
+        "CmentBd",
+        "Wd Shng",
+        "BrkFace",
+        "Stucco",
+        "AsbShng",
+        "ImStucc",
+        "Brk Cmn",
+        "Stone",
+        "AsphShn",
+        "Other",
+        "CBlock"
+      ],
+      "option_labels": {
+        "VinylSd": "VinylSd",
+        "MetalSd": "MetalSd",
+        "HdBoard": "HdBoard",
+        "Wd Sdng": "Wd Sdng",
+        "Plywood": "Plywood",
+        "CmentBd": "CmentBd",
+        "Wd Shng": "Wd Shng",
+        "BrkFace": "BrkFace",
+        "Stucco": "Stucco",
+        "AsbShng": "AsbShng",
+        "ImStucc": "ImStucc",
+        "Brk Cmn": "Brk Cmn",
+        "Stone": "Stone",
+        "AsphShn": "AsphShn",
+        "Other": "Other",
+        "CBlock": "CBlock"
+      },
+      "nullable": false
+    },
+    {
+      "name": "MasVnrType",
+      "label": "Loại veneer xây",
+      "description": "Loại veneer xây",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "None",
+      "options": [
+        "None",
+        "BrkFace",
+        "Stone",
+        "BrkCmn",
+        "NA"
+      ],
+      "option_labels": {
+        "None": "Không có",
+        "BrkFace": "BrkFace",
+        "Stone": "Stone",
+        "BrkCmn": "BrkCmn",
+        "NA": "Không áp dụng/không có theo data dictionary"
+      },
+      "nullable": false
+    },
+    {
+      "name": "MasVnrArea",
+      "label": "Diện tích veneer xây",
+      "description": "Diện tích veneer xây",
+      "unit": "ft²",
+      "group": "Exterior",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1600.0,
+      "nullable": true
+    },
+    {
+      "name": "ExterQual",
+      "label": "Chất lượng ngoại thất",
+      "description": "Chất lượng ngoại thất",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "Gd",
+        "Ex",
+        "Fa"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Ex": "Excellent",
+        "Fa": "Fair"
+      },
+      "nullable": false
+    },
+    {
+      "name": "ExterCond",
+      "label": "Tình trạng ngoại thất",
+      "description": "Tình trạng ngoại thất",
+      "unit": null,
+      "group": "Exterior",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "Gd",
+        "Fa",
+        "Ex",
+        "Po"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Fa": "Fair",
+        "Ex": "Excellent",
+        "Po": "Poor"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Foundation",
+      "label": "Loại móng",
+      "description": "Loại móng",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "PConc",
+      "options": [
+        "PConc",
+        "CBlock",
+        "BrkTil",
+        "Slab",
+        "Stone",
+        "Wood"
+      ],
+      "option_labels": {
+        "PConc": "PConc",
+        "CBlock": "CBlock",
+        "BrkTil": "BrkTil",
+        "Slab": "Slab",
+        "Stone": "Stone",
+        "Wood": "Wood"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtQual",
+      "label": "Chiều cao/chất lượng tầng hầm",
+      "description": "Chiều cao/chất lượng tầng hầm",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "Gd",
+        "Ex",
+        "NA",
+        "Fa"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Ex": "Excellent",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Fa": "Fair"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtCond",
+      "label": "Tình trạng tầng hầm",
+      "description": "Tình trạng tầng hầm",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "Gd",
+        "Fa",
+        "NA",
+        "Po"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Fa": "Fair",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Po": "Poor"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtExposure",
+      "label": "Mức tiếp xúc ngoài của tầng hầm",
+      "description": "Mức tiếp xúc ngoài của tầng hầm",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "No",
+      "options": [
+        "No",
+        "Av",
+        "Gd",
+        "Mn",
+        "NA"
+      ],
+      "option_labels": {
+        "No": "No",
+        "Av": "Av",
+        "Gd": "Good",
+        "Mn": "Mn",
+        "NA": "Không áp dụng/không có theo data dictionary"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtFinType1",
+      "label": "Loại hoàn thiện tầng hầm 1",
+      "description": "Loại hoàn thiện tầng hầm 1",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "Unf",
+      "options": [
+        "Unf",
+        "GLQ",
+        "ALQ",
+        "BLQ",
+        "Rec",
+        "LwQ",
+        "NA"
+      ],
+      "option_labels": {
+        "Unf": "Unf",
+        "GLQ": "GLQ",
+        "ALQ": "ALQ",
+        "BLQ": "BLQ",
+        "Rec": "Rec",
+        "LwQ": "LwQ",
+        "NA": "Không áp dụng/không có theo data dictionary"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtFinSF1",
+      "label": "Diện tích tầng hầm hoàn thiện 1",
+      "description": "Diện tích tầng hầm hoàn thiện 1",
+      "unit": "ft²",
+      "group": "Basement",
+      "kind": "number",
+      "default": 386.5,
+      "min": 0.0,
+      "max": 5644.0,
+      "nullable": false
+    },
+    {
+      "name": "BsmtFinType2",
+      "label": "Loại hoàn thiện tầng hầm 2",
+      "description": "Loại hoàn thiện tầng hầm 2",
+      "unit": null,
+      "group": "Basement",
+      "kind": "category",
+      "default": "Unf",
+      "options": [
+        "Unf",
+        "LwQ",
+        "Rec",
+        "NA",
+        "BLQ",
+        "ALQ",
+        "GLQ"
+      ],
+      "option_labels": {
+        "Unf": "Unf",
+        "LwQ": "LwQ",
+        "Rec": "Rec",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "BLQ": "BLQ",
+        "ALQ": "ALQ",
+        "GLQ": "GLQ"
+      },
+      "nullable": false
+    },
+    {
+      "name": "BsmtFinSF2",
+      "label": "Diện tích tầng hầm hoàn thiện 2",
+      "description": "Diện tích tầng hầm hoàn thiện 2",
+      "unit": "ft²",
+      "group": "Basement",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1474.0,
+      "nullable": false
+    },
+    {
+      "name": "BsmtUnfSF",
+      "label": "Diện tích tầng hầm chưa hoàn thiện",
+      "description": "Diện tích tầng hầm chưa hoàn thiện",
+      "unit": "ft²",
+      "group": "Basement",
+      "kind": "number",
+      "default": 474.0,
+      "min": 0.0,
+      "max": 2336.0,
+      "nullable": false
+    },
+    {
+      "name": "TotalBsmtSF",
+      "label": "Tổng diện tích tầng hầm",
+      "description": "Tổng diện tích tầng hầm",
+      "unit": "ft²",
+      "group": "Basement",
+      "kind": "number",
+      "default": 992.0,
+      "min": 0.0,
+      "max": 6110.0,
+      "nullable": false
+    },
+    {
+      "name": "Heating",
+      "label": "Loại hệ thống sưởi",
+      "description": "Loại hệ thống sưởi",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "GasA",
+      "options": [
+        "GasA",
+        "GasW",
+        "Grav",
+        "Wall",
+        "OthW",
+        "Floor"
+      ],
+      "option_labels": {
+        "GasA": "GasA",
+        "GasW": "GasW",
+        "Grav": "Grav",
+        "Wall": "Wall",
+        "OthW": "OthW",
+        "Floor": "Floor"
+      },
+      "nullable": false
+    },
+    {
+      "name": "HeatingQC",
+      "label": "Chất lượng hệ thống sưởi",
+      "description": "Chất lượng hệ thống sưởi",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "Ex",
+      "options": [
+        "Ex",
+        "TA",
+        "Gd",
+        "Fa"
+      ],
+      "option_labels": {
+        "Ex": "Excellent",
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Fa": "Fair"
+      },
+      "nullable": false
+    },
+    {
+      "name": "CentralAir",
+      "label": "Điều hòa trung tâm",
+      "description": "Điều hòa trung tâm",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "Y",
+      "options": [
+        "Y",
+        "N"
+      ],
+      "option_labels": {
+        "Y": "Có",
+        "N": "Không"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Electrical",
+      "label": "Hệ thống điện",
+      "description": "Hệ thống điện",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "SBrkr",
+      "options": [
+        "SBrkr",
+        "FuseA",
+        "FuseF",
+        "FuseP",
+        "Mix",
+        "NA"
+      ],
+      "option_labels": {
+        "SBrkr": "SBrkr",
+        "FuseA": "FuseA",
+        "FuseF": "FuseF",
+        "FuseP": "FuseP",
+        "Mix": "Mix",
+        "NA": "Không áp dụng/không có theo data dictionary"
+      },
+      "nullable": false
+    },
+    {
+      "name": "1stFlrSF",
+      "label": "Diện tích tầng 1",
+      "description": "Diện tích tầng 1",
+      "unit": "ft²",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 1094.5,
+      "min": 438.0,
+      "max": 4692.0,
+      "nullable": false
+    },
+    {
+      "name": "2ndFlrSF",
+      "label": "Diện tích tầng 2",
+      "description": "Diện tích tầng 2",
+      "unit": "ft²",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2065.0,
+      "nullable": false
+    },
+    {
+      "name": "LowQualFinSF",
+      "label": "Diện tích hoàn thiện chất lượng thấp",
+      "description": "Diện tích hoàn thiện chất lượng thấp",
+      "unit": "ft²",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 572.0,
+      "nullable": false
+    },
+    {
+      "name": "GrLivArea",
+      "label": "Diện tích sinh hoạt trên mặt đất",
+      "description": "Diện tích sinh hoạt trên mặt đất",
+      "unit": "ft²",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 1465.0,
+      "min": 438.0,
+      "max": 5642.0,
+      "nullable": false
+    },
+    {
+      "name": "BsmtFullBath",
+      "label": "Phòng tắm đầy đủ ở tầng hầm",
+      "description": "Phòng tắm đầy đủ ở tầng hầm",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0,
+      "nullable": false
+    },
+    {
+      "name": "BsmtHalfBath",
+      "label": "Phòng tắm nửa ở tầng hầm",
+      "description": "Phòng tắm nửa ở tầng hầm",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0,
+      "nullable": false
+    },
+    {
+      "name": "FullBath",
+      "label": "Phòng tắm đầy đủ",
+      "description": "Phòng tắm đầy đủ",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 2.0,
+      "min": 0.0,
+      "max": 3.0,
+      "nullable": false
+    },
+    {
+      "name": "HalfBath",
+      "label": "Phòng tắm nửa",
+      "description": "Phòng tắm nửa",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0,
+      "nullable": false
+    },
+    {
+      "name": "BedroomAbvGr",
+      "label": "Số phòng ngủ trên mặt đất",
+      "description": "Số phòng ngủ trên mặt đất",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 3.0,
+      "min": 0.0,
+      "max": 8.0,
+      "nullable": false
+    },
+    {
+      "name": "KitchenAbvGr",
+      "label": "Số bếp trên mặt đất",
+      "description": "Số bếp trên mặt đất",
+      "unit": "bếp",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 1.0,
+      "min": 1.0,
+      "max": 3.0,
+      "nullable": false
+    },
+    {
+      "name": "KitchenQual",
+      "label": "Chất lượng bếp",
+      "description": "Chất lượng bếp",
+      "unit": null,
+      "group": "Rooms",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "Gd",
+        "Ex",
+        "Fa"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "Gd": "Good",
+        "Ex": "Excellent",
+        "Fa": "Fair"
+      },
+      "nullable": false
+    },
+    {
+      "name": "TotRmsAbvGrd",
+      "label": "Tổng số phòng trên mặt đất",
+      "description": "Tổng số phòng trên mặt đất",
+      "unit": "phòng",
+      "group": "Rooms",
+      "kind": "number",
+      "default": 6.0,
+      "min": 3.0,
+      "max": 14.0,
+      "nullable": false
+    },
+    {
+      "name": "Functional",
+      "label": "Mức độ sử dụng chức năng",
+      "description": "Mức độ sử dụng chức năng",
+      "unit": null,
+      "group": "Rooms",
+      "kind": "category",
+      "default": "Typ",
+      "options": [
+        "Typ",
+        "Min2",
+        "Min1",
+        "Mod",
+        "Maj1",
+        "Maj2"
+      ],
+      "option_labels": {
+        "Typ": "Typ",
+        "Min2": "Min2",
+        "Min1": "Min1",
+        "Mod": "Mod",
+        "Maj1": "Maj1",
+        "Maj2": "Maj2"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Fireplaces",
+      "label": "Số lò sưởi",
+      "description": "Số lò sưởi",
+      "unit": "cái",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 1.0,
+      "min": 0.0,
+      "max": 3.0,
+      "nullable": false
+    },
+    {
+      "name": "FireplaceQu",
+      "label": "Chất lượng lò sưởi",
+      "description": "Chất lượng lò sưởi",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "NA",
+      "options": [
+        "NA",
+        "Gd",
+        "TA",
+        "Fa",
+        "Ex",
+        "Po"
+      ],
+      "option_labels": {
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Gd": "Good",
+        "TA": "Typical/Average",
+        "Fa": "Fair",
+        "Ex": "Excellent",
+        "Po": "Poor"
+      },
+      "nullable": false
+    },
+    {
+      "name": "GarageType",
+      "label": "Loại gara",
+      "description": "Loại gara",
+      "unit": null,
+      "group": "Garage",
+      "kind": "category",
+      "default": "Attchd",
+      "options": [
+        "Attchd",
+        "Detchd",
+        "BuiltIn",
+        "NA",
+        "Basment",
+        "CarPort",
+        "2Types"
+      ],
+      "option_labels": {
+        "Attchd": "Attchd",
+        "Detchd": "Detchd",
+        "BuiltIn": "BuiltIn",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Basment": "Basment",
+        "CarPort": "CarPort",
+        "2Types": "2Types"
+      },
+      "nullable": false
+    },
+    {
+      "name": "GarageYrBlt",
+      "label": "Năm xây gara",
+      "description": "Năm xây gara",
+      "unit": "năm",
+      "group": "Garage",
+      "kind": "number",
+      "default": 1979.0,
+      "min": 1900.0,
+      "max": 2010.0,
+      "nullable": true
+    },
+    {
+      "name": "GarageFinish",
+      "label": "Mức hoàn thiện gara",
+      "description": "Mức hoàn thiện gara",
+      "unit": null,
+      "group": "Garage",
+      "kind": "category",
+      "default": "Unf",
+      "options": [
+        "Unf",
+        "RFn",
+        "Fin",
+        "NA"
+      ],
+      "option_labels": {
+        "Unf": "Unf",
+        "RFn": "RFn",
+        "Fin": "Fin",
+        "NA": "Không áp dụng/không có theo data dictionary"
+      },
+      "nullable": false
+    },
+    {
+      "name": "GarageCars",
+      "label": "Sức chứa gara",
+      "description": "Sức chứa gara",
+      "unit": "số xe",
+      "group": "Garage",
+      "kind": "number",
+      "default": 2.0,
+      "min": 0.0,
+      "max": 4.0,
+      "nullable": false
+    },
+    {
+      "name": "GarageArea",
+      "label": "Diện tích gara",
+      "description": "Diện tích gara",
+      "unit": "ft²",
+      "group": "Garage",
+      "kind": "number",
+      "default": 480.0,
+      "min": 0.0,
+      "max": 1418.0,
+      "nullable": false
+    },
+    {
+      "name": "GarageQual",
+      "label": "Chất lượng gara",
+      "description": "Chất lượng gara",
+      "unit": null,
+      "group": "Garage",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "NA",
+        "Fa",
+        "Gd",
+        "Ex",
+        "Po"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Fa": "Fair",
+        "Gd": "Good",
+        "Ex": "Excellent",
+        "Po": "Poor"
+      },
+      "nullable": false
+    },
+    {
+      "name": "GarageCond",
+      "label": "Tình trạng gara",
+      "description": "Tình trạng gara",
+      "unit": null,
+      "group": "Garage",
+      "kind": "category",
+      "default": "TA",
+      "options": [
+        "TA",
+        "NA",
+        "Fa",
+        "Gd",
+        "Po",
+        "Ex"
+      ],
+      "option_labels": {
+        "TA": "Typical/Average",
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Fa": "Fair",
+        "Gd": "Good",
+        "Po": "Poor",
+        "Ex": "Excellent"
+      },
+      "nullable": false
+    },
+    {
+      "name": "PavedDrive",
+      "label": "Đường vào gara lát nhựa/bê tông",
+      "description": "Đường vào gara lát nhựa/bê tông",
+      "unit": null,
+      "group": "Garage",
+      "kind": "category",
+      "default": "Y",
+      "options": [
+        "Y",
+        "N",
+        "P"
+      ],
+      "option_labels": {
+        "Y": "Có",
+        "N": "Không",
+        "P": "P"
+      },
+      "nullable": false
+    },
+    {
+      "name": "WoodDeckSF",
+      "label": "Diện tích sàn gỗ ngoài trời",
+      "description": "Diện tích sàn gỗ ngoài trời",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 857.0,
+      "nullable": false
+    },
+    {
+      "name": "OpenPorchSF",
+      "label": "Diện tích hiên mở",
+      "description": "Diện tích hiên mở",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 24.0,
+      "min": 0.0,
+      "max": 547.0,
+      "nullable": false
+    },
+    {
+      "name": "EnclosedPorch",
+      "label": "Diện tích hiên kín",
+      "description": "Diện tích hiên kín",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 552.0,
+      "nullable": false
+    },
+    {
+      "name": "3SsnPorch",
+      "label": "Diện tích hiên ba mùa",
+      "description": "Diện tích hiên ba mùa",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 508.0,
+      "nullable": false
+    },
+    {
+      "name": "ScreenPorch",
+      "label": "Diện tích hiên lưới",
+      "description": "Diện tích hiên lưới",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 480.0,
+      "nullable": false
+    },
+    {
+      "name": "PoolArea",
+      "label": "Diện tích hồ bơi",
+      "description": "Diện tích hồ bơi",
+      "unit": "ft²",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 738.0,
+      "nullable": false
+    },
+    {
+      "name": "PoolQC",
+      "label": "Chất lượng hồ bơi",
+      "description": "Chất lượng hồ bơi",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "NA",
+      "options": [
+        "NA",
+        "Gd",
+        "Ex",
+        "Fa"
+      ],
+      "option_labels": {
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Gd": "Good",
+        "Ex": "Excellent",
+        "Fa": "Fair"
+      },
+      "nullable": false
+    },
+    {
+      "name": "Fence",
+      "label": "Chất lượng hàng rào",
+      "description": "Chất lượng hàng rào",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "NA",
+      "options": [
+        "NA",
+        "MnPrv",
+        "GdPrv",
+        "GdWo",
+        "MnWw"
+      ],
+      "option_labels": {
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "MnPrv": "MnPrv",
+        "GdPrv": "GdPrv",
+        "GdWo": "GdWo",
+        "MnWw": "MnWw"
+      },
+      "nullable": false
+    },
+    {
+      "name": "MiscFeature",
+      "label": "Tiện ích phụ khác",
+      "description": "Tiện ích phụ khác",
+      "unit": null,
+      "group": "Amenities",
+      "kind": "category",
+      "default": "NA",
+      "options": [
+        "NA",
+        "Shed",
+        "Gar2",
+        "Othr",
+        "TenC"
+      ],
+      "option_labels": {
+        "NA": "Không áp dụng/không có theo data dictionary",
+        "Shed": "Shed",
+        "Gar2": "Gar2",
+        "Othr": "Othr",
+        "TenC": "TenC"
+      },
+      "nullable": false
+    },
+    {
+      "name": "MiscVal",
+      "label": "Giá trị tiện ích phụ",
+      "description": "Giá trị tiện ích phụ",
+      "unit": "USD",
+      "group": "Amenities",
+      "kind": "number",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 15500.0,
+      "nullable": false
+    },
+    {
+      "name": "MoSold",
+      "label": "Tháng bán",
+      "description": "Tháng bán",
+      "unit": "1-12",
+      "group": "Sale information",
+      "kind": "number",
+      "default": 6.0,
+      "min": 1.0,
+      "max": 12.0,
+      "nullable": false
+    },
+    {
+      "name": "YrSold",
+      "label": "Năm bán",
+      "description": "Năm bán",
+      "unit": "năm",
+      "group": "Sale information",
+      "kind": "number",
+      "default": 2008.0,
+      "min": 2006.0,
+      "max": 2010.0,
+      "nullable": false
+    },
+    {
+      "name": "SaleType",
+      "label": "Loại giao dịch",
+      "description": "Loại giao dịch",
+      "unit": null,
+      "group": "Sale information",
+      "kind": "category",
+      "default": "WD",
+      "options": [
+        "WD",
+        "New",
+        "COD",
+        "ConLD",
+        "ConLI",
+        "CWD",
+        "ConLw",
+        "Con",
+        "Oth"
+      ],
+      "option_labels": {
+        "WD": "WD",
+        "New": "New",
+        "COD": "COD",
+        "ConLD": "ConLD",
+        "ConLI": "ConLI",
+        "CWD": "CWD",
+        "ConLw": "ConLw",
+        "Con": "Con",
+        "Oth": "Oth"
+      },
+      "nullable": false
+    },
+    {
+      "name": "SaleCondition",
+      "label": "Điều kiện bán",
+      "description": "Điều kiện bán",
+      "unit": null,
+      "group": "Sale information",
+      "kind": "category",
+      "default": "Normal",
+      "options": [
+        "Normal",
+        "Partial",
+        "Abnorml",
+        "Family",
+        "Alloca",
+        "AdjLand"
+      ],
+      "option_labels": {
+        "Normal": "Normal",
+        "Partial": "Partial",
+        "Abnorml": "Abnorml",
+        "Family": "Family",
+        "Alloca": "Alloca",
+        "AdjLand": "AdjLand"
+      },
+      "nullable": false
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+ABSOLUTE_PATH_SCAN_PASS
+No /mnt/data or C:\Users paths in text deliverables.

@@ -1,0 +1,18 @@
+{
+  "primary_metric": "validation_RMSE",
+  "validation_tolerance": 0.02,
+  "ridge_tie_break_requires_cv_not_worse": true,
+  "uses_test": false,
+  "candidate_filter": "Predefined tuned candidates: ElasticNet and Ridge; test is unavailable during selection.",
+  "tie_breaker_order": [
+    "validation_RMSE",
+    "CV_RMSE_mean"
+  ],
+  "ridge_tie_break_rule": "Select Ridge only when its validation RMSE is within validation_tolerance of the best tuned validation RMSE and its CV RMSE mean is no worse.",
+  "locked_model": "ElasticNet",
+  "locked_params": {
+    "regressor__model__l1_ratio": 0.2,
+    "regressor__model__alpha": 0.001
+  },
+  "selection_locked_at_utc": "2026-08-26T11:51:17.424348+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-08-26T11:57:53.320039+00:00",
+  "python": "3.13.5",
+  "files": [
+    {
+      "path": "data/house_train_80.csv",
+      "bytes": 369865,
+      "sha256": "6af30124e1522a6b42806ebbfba4c88d938ed06b8fec98f9f8dbf3566a638c7a"
+    },
+    {
+      "path": "data/house_validation_10.csv",
+      "bytes": 46936,
+      "sha256": "58828c452645ee3181c4035881ef3f0ff792fa8d4f01107e62778606807bd8c8"
+    },
+    {
+      "path": "data/house_test_10.csv",
+      "bytes": 47057,
+      "sha256": "a0f077b3f09007424a3f819b2669c02aee3d2312be117b00451b3b686bdf4cfc"
+    },
+    {
+      "path": "models/house_price_pipeline.joblib",
+      "bytes": 27603,
+      "sha256": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1"
+    },
+    {
+      "path": "models/input_schema.json",
+      "bytes": 37866,
+      "sha256": "069fa2f9049b4dc41d2448fe91a5ac8550f85a99d749b1dcb0932bf0553ad00b"
+    },
+    {
+      "path": "outputs/summary.json",
+      "bytes": 19010,
+      "sha256": "a76f2df82be7d053d4f82bb9bc56ba15b4d9ad70ba885af16d0732103e9e08a2"
+    },
+    {
+      "path": "models/model_metadata.json",
+      "bytes": 1997,
+      "sha256": "6f8644fe1ccae0127e900c85921cf19bb3eabfd15ed17dd6cff8f732ebb6d72a"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-08-26T17:48:18.668356+00:00",
+  "files": {
+    "README.md": {
+      "sha256": "1f937de4ff2cbc2075e8073c5c432103987c606bdf111fd996db2dfb0ab38eef",
+      "bytes": 22635,
+      "mtime_utc": "2026-08-26T17:33:24.677500+00:00"
+    },
+    "CHANGELOG.md": {
+      "sha256": "f1eaa6940b8396457c0e6d0783dbf6a1a7851178c145bc9d1e440d033ddb98c0",
+      "bytes": 2760,
+      "mtime_utc": "2026-08-26T17:43:27.761378+00:00"
+    },
+    "QUALITY_AUDIT.md": {
+      "sha256": "53334e8207eb83efbfcdec832c2f2da8214397ae8a5f50827dcc82ec5dfb60e2",
+      "bytes": 1976,
+      "mtime_utc": "2026-08-26T17:43:27.761887+00:00"
+    },
+    "FINAL_AUDIT_REPORT.md": {
+      "sha256": "8cf191a2c668976ce107de00cf260f36855e2a0a244b797ef75f7b7bf9d57ba3",
+      "bytes": 8136,
+      "mtime_utc": "2026-08-26T17:48:18.667824+00:00"
+    },
+    "reports/Bao_cao_Du_bao_Gia_nha_Hoan_chinh.docx": {
+      "sha256": "eb09939c9ea1e816902568eb2f116ddc4d8111c8bbcb069d94965b6f9afcd782",
+      "bytes": 736459,
+      "mtime_utc": "2026-08-26T17:38:52.989746+00:00"
+    },
+    "reports/Bao_cao_Du_bao_Gia_nha_Hoan_chinh.pdf": {
+      "sha256": "6549676727e504958748916ea661d9cfc8f9087d420b5a4e48620f1e5e6b8552",
+      "bytes": 1111282,
+      "mtime_utc": "2026-08-26T17:38:54.685662+00:00"
+    },
+    "slides/Slide_Du_bao_gia_nha_Hoan_chinh.pptx": {
+      "sha256": "57609ddc3bb72a8202a200a8cfdc78863056a91449cc860cd1663150dda6b06e",
+      "bytes": 867555,
+      "mtime_utc": "2026-08-26T17:33:42.545249+00:00"
+    },
+    "models/house_price_pipeline.joblib": {
+      "sha256": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1",
+      "bytes": 27603,
+      "mtime_utc": "2026-08-26T11:51:25+00:00"
+    },
+    "team/Phan_cong_cong_viec_4_thanh_vien.xlsx": {
+      "sha256": "0b45a2030bb2e2063371bd368029f4ce09e2d818435a8ddf7deff1f5be5f1d61",
+      "bytes": 7722,
+      "mtime_utc": "2026-08-26T10:47:24+00:00"
+    },
+    "outputs/audit/final_zip_audit.txt": {
+      "sha256": "6e4bf95ccb0f02d814aec4416a4614c92c444e8a2f329e3ebd52f4a611201a48",
+      "bytes": 428,
+      "mtime_utc": "2026-08-26T17:48:18.667963+00:00"
+    }
+  }
+}

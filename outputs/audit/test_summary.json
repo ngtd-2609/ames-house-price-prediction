@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-08-26T17:44:33.953638+00:00",
+  "tests_collected": 67,
+  "tests_passed": 67,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "warnings": 0,
+  "source": "outputs/audit/pytest_final.txt",
+  "structured_from": "JUnit XML generated and parsed in the same run; transient XML removed after summary creation"
+}

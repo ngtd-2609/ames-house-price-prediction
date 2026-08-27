@@ -1,0 +1,162 @@
+{
+  "src/house_price/selection.py": {
+    "before_sha256": "fca963fd63c1854c32bf5907408a3c829fc153b20c43660e34c173fd2fdd7713",
+    "after_sha256": "1d168bb093d9dfea5e0a96aaaae747e7a15e7c63e4e1d6360f0c911b58f7d814",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "src/house_price/tuning.py": {
+    "before_sha256": "38ef3f077fe2da24da6893f9ee725f0700906ac0a450cb39f32db2bc393a9f98",
+    "after_sha256": "10172c8dfa06526effb565abc64c4a40ea3a7fcea1a5c645526247256925d043",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "src/house_price/validation.py": {
+    "before_sha256": "38c09acf9845cae47dd02ebf7a14a61ee550da06d7a36510f97c22086a710321",
+    "after_sha256": "4f4b8df6d1b0d249adfa4da61bafb429bd23b47141c3c0b30fb636ac9e520604",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "src/house_price/train.py": {
+    "before_sha256": "073e3161e05bcbb37fa562fd2574542ed119105113fe4dc90904b5e55d3a9fbb",
+    "after_sha256": null,
+    "changed": true,
+    "before_exists": true,
+    "after_exists": false
+  },
+  "tests/test_final_fix_coverage.py": {
+    "before_sha256": null,
+    "after_sha256": "a69ffe68a06228895d9d88c4363620db4b4f0be6880a3f6ceb748da3525f8dcf",
+    "changed": true,
+    "before_exists": false,
+    "after_exists": true
+  },
+  "outputs/model_selection_policy.json": {
+    "before_sha256": "081263eb0b44e756a1bffb7b5125b7be31e896c0c16b75777154060171da2a1b",
+    "after_sha256": "13741e7676112de81f61a168a781f2838e7aacf5ce3380f96f3b0b8fc9ff6d84",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "scripts/check_project_consistency.py": {
+    "before_sha256": "29305c256306d1e392459c93e4d282caec14e2a3a9abc5d19bf6602b2d475e90",
+    "after_sha256": "0acc12c87e1106b755a2b7b6179803768010b9abce4feb8430c2e8a4f1a003f5",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "scripts/generate_audit_evidence.py": {
+    "before_sha256": null,
+    "after_sha256": "ad95c432ea024e3989a399cc9846271643a28c70265fce6fb6d139acf94bd11b",
+    "changed": true,
+    "before_exists": false,
+    "after_exists": true
+  },
+  "scripts/build_notebooks.py": {
+    "before_sha256": "2e29651f04b2fde1a39bd4ed3b5901c66dcf2271dfa1011ef7d0be1bc4ffea0d",
+    "after_sha256": "347a7c5f34cf502ed8b8185d8ec83bdc73b9643672b9a9c6ed53eaf0ee76b905",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "scripts/build_notebook_summary.py": {
+    "before_sha256": null,
+    "after_sha256": "e3e0acf3c157e2ba8cd8528082b8973b852e3d8efe06a582f73c682e175d3742",
+    "changed": true,
+    "before_exists": false,
+    "after_exists": true
+  },
+  "scripts/build_source_fingerprint.py": {
+    "before_sha256": null,
+    "after_sha256": "026182564c543ddb5a7b9fcbb25590d199a6fcbeb52a68a0242b014b4d7d3dd3",
+    "changed": true,
+    "before_exists": false,
+    "after_exists": true
+  },
+  "notebooks/House_Price_Prediction_Detailed.ipynb": {
+    "before_sha256": "59eabc05d69b14c783a4a11a8ca6125de2c66f5b5a0800d6735e96b805989402",
+    "after_sha256": "69e0d64494dfb1c5bd6cbfdd16ab5b16b2225525cc733f185bd847edd9a2b654",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true,
+    "before_cell_count": 24,
+    "after_cell_count": 27,
+    "same_source_at_matching_positions": 0,
+    "position_source_differences": 27
+  },
+  "notebooks/House_Price_Prediction_Basic.ipynb": {
+    "before_sha256": "713741eeeb5c961bcd632fe18977dce88d502584db8bb5c53e5582c13e083a82",
+    "after_sha256": "c395059be3caf4d4ae441089498ec3f6dee153b961c5aa6fc9cbefba0edba87f",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true,
+    "before_cell_count": 8,
+    "after_cell_count": 13,
+    "same_source_at_matching_positions": 0,
+    "position_source_differences": 13
+  },
+  "scripts/build_report.py": {
+    "before_sha256": "1e4595b9cd98d24ef03f99338655b4272ac50fd1059a7dee574cd8c120be586e",
+    "after_sha256": "b184d0211a21e288833b0f7ecfff4376b4b00a9f6a4c1551d5e13e38a8477408",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "scripts/build_slides.js": {
+    "before_sha256": "5810ecd1399bf7d8c2fb1efd9530456793ddafc13587143b0ba9e0f9857f3286",
+    "after_sha256": "e229e87c6743a5c99d7cb92f231086d6153d6daa06674af91e799d1cae994de8",
+    "changed": true,
+    "before_exists": true,
+    "after_exists": true
+  },
+  "removed_old_audit_files": [
+    "build_metadata_arch.txt",
+    "build_notebooks_arch.txt",
+    "build_report.txt",
+    "build_report_arch.txt",
+    "build_report_arch_final.txt",
+    "build_slides.txt",
+    "build_slides_arch.txt",
+    "compile.txt",
+    "compile_arch_final.txt",
+    "consistency_arch.txt",
+    "consistency_arch_final.txt",
+    "consistency_arch_final2.txt",
+    "consistency_check.txt",
+    "convert_slides_arch.txt",
+    "coverage_arch.txt",
+    "excel_sha.txt",
+    "final_inventory.tsv",
+    "final_zip_audit.txt",
+    "notebook_run.txt",
+    "notebook_run_arch.txt",
+    "placeholder_scan.txt",
+    "pytest.txt",
+    "pytest_arch.txt",
+    "render_docx.txt",
+    "render_docx_arch.txt",
+    "render_docx_arch2.txt",
+    "render_docx_arch_final.txt",
+    "render_pdf.txt",
+    "render_pdf_arch.txt",
+    "render_pdf_arch_final.txt",
+    "render_slides.txt",
+    "render_slides_arch.txt",
+    "render_slides_arch_final.txt",
+    "render_visual_qa_summary.txt",
+    "secret_scan_raw.txt",
+    "slides_test.txt",
+    "smoke.txt",
+    "smoke_arch.txt",
+    "stale_reference_scan.txt",
+    "streamlit_smoke.txt",
+    "team_assignment_sha256_after.txt",
+    "team_assignment_sha256_arch_final.txt",
+    "train_arch_refactor.txt",
+    "zero_byte_files.txt",
+    "zero_byte_scan.txt"
+  ]
+}

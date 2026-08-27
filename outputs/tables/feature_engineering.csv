@@ -1,0 +1,10 @@
+﻿Feature,Formula,Meaning
+HouseAge,YrSold - YearBuilt,Tuổi nhà tại thời điểm bán
+RemodAge,YrSold - YearRemodAdd,Tuổi từ lần cải tạo
+GarageAge,YrSold - GarageYrBlt,Tuổi gara
+TotalSF,TotalBsmtSF + 1stFlrSF + 2ndFlrSF,Tổng diện tích sàn
+TotalBathrooms,Full + 0.5 Half + basement,Tổng phòng tắm quy đổi
+TotalPorchSF,Tổng 5 loại hiên/sàn,Không gian hiên
+TotalOutdoorSF,TotalPorchSF + PoolArea,Không gian ngoài trời
+HasGarage/HasBsmt/HasFireplace/HasPool/Has2ndFloor/HasMasVnr,Cờ 0/1,Có/không tiện ích
+MoSold_sin/cos,sin/cos(2π MoSold/12),Mã hóa chu kỳ tháng

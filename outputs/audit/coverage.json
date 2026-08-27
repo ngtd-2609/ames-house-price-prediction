@@ -1,0 +1,108 @@
+{
+  "generated_at_utc": "2026-08-26T17:44:33.954690+00:00",
+  "scope": [
+    "src/house_price",
+    "backend"
+  ],
+  "total_statements": 706,
+  "total_missing": 1,
+  "total_coverage": 99.85835694050992,
+  "display_coverage": 99.9,
+  "files": {
+    "backend/__init__.py": {
+      "statements": 2,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "backend/service.py": {
+      "statements": 32,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/__init__.py": {
+      "statements": 4,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/artifacts.py": {
+      "statements": 28,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/config.py": {
+      "statements": 11,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/data.py": {
+      "statements": 29,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/diagnostics.py": {
+      "statements": 81,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/eda.py": {
+      "statements": 102,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/evaluation.py": {
+      "statements": 22,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/explainability.py": {
+      "statements": 39,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/features.py": {
+      "statements": 53,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/modeling.py": {
+      "statements": 24,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/plotting.py": {
+      "statements": 10,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/predict.py": {
+      "statements": 37,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/preprocessing.py": {
+      "statements": 16,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/reporting.py": {
+      "statements": 67,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/selection.py": {
+      "statements": 54,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/tuning.py": {
+      "statements": 71,
+      "missing": 0,
+      "coverage_pct": 100.0
+    },
+    "src/house_price/validation.py": {
+      "statements": 24,
+      "missing": 1,
+      "coverage_pct": 95.83333333333333
+    }
+  }
+}

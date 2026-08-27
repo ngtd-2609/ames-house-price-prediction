@@ -1,0 +1,2 @@
+STALE_REFERENCE_SCAN_PASS
+Current-claim validation delegated to scripts/check_project_consistency.py; explicitly-labelled baseline/before values are allowed as historical evidence.

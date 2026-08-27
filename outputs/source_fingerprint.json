@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-08-26T17:29:25.344975+00:00",
+  "files": {
+    "scripts/train_full_project.py": "41c17a235d97acd23cd8d434bd570c2f0eddf1ab470ab5f0fe2f6154fdbe80dd",
+    "src/house_price/selection.py": "1d168bb093d9dfea5e0a96aaaae747e7a15e7c63e4e1d6360f0c911b58f7d814",
+    "src/house_price/tuning.py": "10172c8dfa06526effb565abc64c4a40ea3a7fcea1a5c645526247256925d043",
+    "src/house_price/reporting.py": "d89448a140cf20030e200cc015be19a4fd4cee6d61b1eed711896f3aaefbdba7",
+    "src/house_price/validation.py": "4f4b8df6d1b0d249adfa4da61bafb429bd23b47141c3c0b30fb636ac9e520604"
+  }
+}

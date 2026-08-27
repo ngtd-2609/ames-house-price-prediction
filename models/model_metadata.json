@@ -1,0 +1,66 @@
+{
+  "model_name": "Ames House Price Regressor",
+  "artifact_version": "2.0.0",
+  "task": "supervised regression",
+  "target": "SalePrice",
+  "selected_model": "ElasticNet",
+  "selected_params": {
+    "regressor__model__l1_ratio": 0.2,
+    "regressor__model__alpha": 0.001
+  },
+  "validation_metrics": {
+    "RMSE": 24855.661951178718,
+    "MAE": 15376.306101096603,
+    "R2": 0.9172364514650779,
+    "RMSLE": 0.12022728646913564
+  },
+  "test_metrics": {
+    "RMSE": 22228.60309443587,
+    "MAE": 15452.339433784195,
+    "R2": 0.907628188218905,
+    "RMSLE": 0.11772471181677159
+  },
+  "test_bootstrap_ci": {
+    "RMSE_95CI": {
+      "lower": 18167.238154171355,
+      "upper": 26757.93165075122
+    },
+    "MAE_95CI": {
+      "lower": 12925.408730977479,
+      "upper": 18188.22628190603
+    },
+    "n_bootstrap": 300
+  },
+  "cv_stability": {
+    "CV_RMSE_mean": 39728.84718152985,
+    "CV_RMSE_std": 15890.4486933399,
+    "CV_MAE_mean": 16070.744103435174,
+    "CV_MAE_std": 1377.3747408159488,
+    "CV_R2_mean": 0.7236706820750918,
+    "CV_R2_std": 0.18203566268335455,
+    "CV_train_RMSE_mean": 19047.56240536716
+  },
+  "training_rows": 1314,
+  "test_rows": 146,
+  "raw_feature_count": 79,
+  "engineered_feature_count": 94,
+  "random_state": 42,
+  "end_to_end_raw_input": true,
+  "contains_feature_engineering": true,
+  "model_sha256": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1",
+  "schema_sha256": "069fa2f9049b4dc41d2448fe91a5ac8550f85a99d749b1dcb0932bf0553ad00b",
+  "created_at_utc": "2026-08-26T11:51:25.286277+00:00",
+  "runtime_environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.8.0",
+    "random_state": 42
+  },
+  "limitations": [
+    "Du lieu Ames lich su, khong dai dien truc tiep cho thi truong Viet Nam.",
+    "Sai so tuyet doi tang o mot so nhom nha gia cao.",
+    "Khong co bien vi mo, lai suat, toa do khoang cach hay tinh trang phap ly."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "detailed_notebook": "House_Price_Prediction_Detailed.ipynb",
+  "detailed_cells": 27,
+  "detailed_code_cells": 15,
+  "detailed_status": "PASS",
+  "detailed_execution_errors": 0,
+  "basic_notebook": "House_Price_Prediction_Basic.ipynb",
+  "basic_cells": 13,
+  "basic_code_cells": 8,
+  "basic_status": "PASS",
+  "basic_execution_errors": 0,
+  "generated_at_utc": "2026-08-26T17:31:54.737316+00:00",
+  "executed_with": "scripts/execute_notebooks.py"
+}

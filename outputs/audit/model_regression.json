@@ -1,0 +1,54 @@
+{
+  "model_sha_before": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1",
+  "model_sha_after": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1",
+  "selected_model_before": "ElasticNet",
+  "selected_model_after": "ElasticNet",
+  "params_before": {
+    "regressor__model__l1_ratio": 0.2,
+    "regressor__model__alpha": 0.001
+  },
+  "params_after": {
+    "regressor__model__l1_ratio": 0.2,
+    "regressor__model__alpha": 0.001
+  },
+  "validation_metrics_before": {
+    "RMSE": 24855.661951178718,
+    "MAE": 15376.306101096603,
+    "R2": 0.9172364514650779,
+    "RMSLE": 0.12022728646913564
+  },
+  "validation_metrics_after": {
+    "RMSE": 24855.661951178718,
+    "MAE": 15376.306101096603,
+    "R2": 0.9172364514650779,
+    "RMSLE": 0.12022728646913564
+  },
+  "test_metrics_before": {
+    "RMSE": 22228.60309443587,
+    "MAE": 15452.339433784195,
+    "R2": 0.907628188218905,
+    "RMSLE": 0.11772471181677159
+  },
+  "test_metrics_after": {
+    "RMSE": 22228.60309443587,
+    "MAE": 15452.339433784195,
+    "R2": 0.907628188218905,
+    "RMSLE": 0.11772471181677159
+  },
+  "fixed_sample_predictions_before": [
+    298178.63357724843,
+    135974.74912243878,
+    122723.4839268638,
+    196165.09967683678,
+    229954.95724944383
+  ],
+  "fixed_sample_predictions_after": [
+    298178.63357724843,
+    135974.74912243878,
+    122723.4839268638,
+    196165.09967683678,
+    229954.95724944383
+  ],
+  "max_abs_prediction_diff": 0.0,
+  "status": "PASS"
+}

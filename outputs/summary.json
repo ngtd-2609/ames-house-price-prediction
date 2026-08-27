@@ -1,0 +1,653 @@
+{
+  "canonical_result_source": "outputs/summary.json",
+  "code_hashes": {
+    "train_full_project.py": "41c17a235d97acd23cd8d434bd570c2f0eddf1ab470ab5f0fe2f6154fdbe80dd",
+    "src_house_price_artifacts.py": "d48ef5b253627b21d136818aa167019c28306030c3e2f751c48afd34cc66794a"
+  },
+  "generated_at_utc": "2026-08-26T11:51:25.286277+00:00",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.8.0",
+    "random_state": 42
+  },
+  "dataset": {
+    "train_shape": [
+      1168,
+      81
+    ],
+    "validation_shape": [
+      146,
+      81
+    ],
+    "test_shape": [
+      146,
+      81
+    ],
+    "total_rows": 1460,
+    "input_features_raw": 79,
+    "engineered_features_added": 15,
+    "engineered_feature_count": 94,
+    "split_origin_reproducible": false
+  },
+  "data_hashes": [
+    {
+      "file": "data/house_train_80.csv",
+      "bytes": 369865,
+      "sha256": "6af30124e1522a6b42806ebbfba4c88d938ed06b8fec98f9f8dbf3566a638c7a"
+    },
+    {
+      "file": "data/house_validation_10.csv",
+      "bytes": 46936,
+      "sha256": "58828c452645ee3181c4035881ef3f0ff792fa8d4f01107e62778606807bd8c8"
+    },
+    {
+      "file": "data/house_test_10.csv",
+      "bytes": 47057,
+      "sha256": "a0f077b3f09007424a3f819b2669c02aee3d2312be117b00451b3b686bdf4cfc"
+    }
+  ],
+  "target_stats": {
+    "count": 1168,
+    "mean": 180976.886130137,
+    "median": 163000.0,
+    "std": 79285.16550182083,
+    "min": 34900.0,
+    "q1": 129975.0,
+    "q3": 213625.0,
+    "q95": 328584.9999999999,
+    "max": 755000.0,
+    "skewness": 1.8878537419039096,
+    "log1p_skewness": 0.1677586686986603
+  },
+  "top_correlations": [
+    {
+      "Feature": "OverallQual",
+      "Correlation_with_SalePrice": 0.7903161095647523
+    },
+    {
+      "Feature": "GrLivArea",
+      "Correlation_with_SalePrice": 0.7051770388615072
+    },
+    {
+      "Feature": "GarageCars",
+      "Correlation_with_SalePrice": 0.6377287847525626
+    },
+    {
+      "Feature": "GarageArea",
+      "Correlation_with_SalePrice": 0.6084361961654664
+    },
+    {
+      "Feature": "TotalBsmtSF",
+      "Correlation_with_SalePrice": 0.5994217993692946
+    },
+    {
+      "Feature": "1stFlrSF",
+      "Correlation_with_SalePrice": 0.598041091638841
+    },
+    {
+      "Feature": "FullBath",
+      "Correlation_with_SalePrice": 0.5530924110145518
+    },
+    {
+      "Feature": "TotRmsAbvGrd",
+      "Correlation_with_SalePrice": 0.51791873194919
+    },
+    {
+      "Feature": "YearRemodAdd",
+      "Correlation_with_SalePrice": 0.5138428745872088
+    },
+    {
+      "Feature": "YearBuilt",
+      "Correlation_with_SalePrice": 0.5122835049706536
+    }
+  ],
+  "missing_top": [
+    {
+      "Column": "PoolQC",
+      "Missing_or_absence_count": 1161,
+      "Missing_or_absence_pct": 99.40068493150685
+    },
+    {
+      "Column": "MiscFeature",
+      "Missing_or_absence_count": 1125,
+      "Missing_or_absence_pct": 96.31849315068493
+    },
+    {
+      "Column": "Alley",
+      "Missing_or_absence_count": 1095,
+      "Missing_or_absence_pct": 93.75
+    },
+    {
+      "Column": "Fence",
+      "Missing_or_absence_count": 943,
+      "Missing_or_absence_pct": 80.73630136986301
+    },
+    {
+      "Column": "MasVnrType",
+      "Missing_or_absence_count": 693,
+      "Missing_or_absence_pct": 59.332191780821915
+    },
+    {
+      "Column": "FireplaceQu",
+      "Missing_or_absence_count": 555,
+      "Missing_or_absence_pct": 47.51712328767123
+    },
+    {
+      "Column": "LotFrontage",
+      "Missing_or_absence_count": 212,
+      "Missing_or_absence_pct": 18.15068493150685
+    },
+    {
+      "Column": "GarageQual",
+      "Missing_or_absence_count": 63,
+      "Missing_or_absence_pct": 5.3938356164383565
+    },
+    {
+      "Column": "GarageFinish",
+      "Missing_or_absence_count": 63,
+      "Missing_or_absence_pct": 5.3938356164383565
+    },
+    {
+      "Column": "GarageType",
+      "Missing_or_absence_count": 63,
+      "Missing_or_absence_pct": 5.3938356164383565
+    }
+  ],
+  "ranked_models": [
+    {
+      "Model": "ElasticNet",
+      "Train_RMSE": 20829.179687026466,
+      "RMSE": 24855.661951178718,
+      "MAE": 15376.306101096603,
+      "R2": 0.9172364514650779,
+      "RMSLE": 0.12022728646913564,
+      "Fit_seconds": 0.21869806499989863,
+      "Predict_seconds": 0.06544373399992764,
+      "RMSE_gap": 4026.4822641522514,
+      "Relative_to_dummy_RMSE_improvement_pct": 71.95006875200423
+    },
+    {
+      "Model": "Ridge",
+      "Train_RMSE": 22597.602309311587,
+      "RMSE": 25213.198119716424,
+      "MAE": 15384.612320863973,
+      "R2": 0.914838302694547,
+      "RMSLE": 0.12121411973848266,
+      "Fit_seconds": 0.0930278669998188,
+      "Predict_seconds": 0.06441223199999513,
+      "RMSE_gap": 2615.595810404837,
+      "Relative_to_dummy_RMSE_improvement_pct": 71.5465846297204
+    },
+    {
+      "Model": "LinearRegression",
+      "Train_RMSE": 16531.377709185148,
+      "RMSE": 26276.87974878166,
+      "MAE": 16712.364034127055,
+      "R2": 0.9075012161326436,
+      "RMSLE": 0.15416081299396628,
+      "Fit_seconds": 0.18583130600018194,
+      "Predict_seconds": 0.08894320499985042,
+      "RMSE_gap": 9745.502039596511,
+      "Relative_to_dummy_RMSE_improvement_pct": 70.34620635680858
+    },
+    {
+      "Model": "ExtraTreesRegressor",
+      "Train_RMSE": 7.436694224147551e-10,
+      "RMSE": 26552.113704061183,
+      "MAE": 16503.165802782358,
+      "R2": 0.9055533335104431,
+      "RMSLE": 0.14039209331876196,
+      "Fit_seconds": 0.3237682959997983,
+      "Predict_seconds": 0.08769592199996623,
+      "RMSE_gap": 26552.11370406044,
+      "Relative_to_dummy_RMSE_improvement_pct": 70.03560133096504
+    },
+    {
+      "Model": "RandomForestRegressor",
+      "Train_RMSE": 12994.73658461946,
+      "RMSE": 27861.07042501676,
+      "MAE": 14376.887850265328,
+      "R2": 0.8960118069500184,
+      "RMSLE": 0.12002870091872359,
+      "Fit_seconds": 0.2595932249996622,
+      "Predict_seconds": 0.09482838199983235,
+      "RMSE_gap": 14866.333840397298,
+      "Relative_to_dummy_RMSE_improvement_pct": 68.55842699131061
+    },
+    {
+      "Model": "DecisionTreeRegressor",
+      "Train_RMSE": 21878.487159342974,
+      "RMSE": 31457.93368416198,
+      "MAE": 22219.55675430611,
+      "R2": 0.8674289119101437,
+      "RMSLE": 0.17072622923082845,
+      "Fit_seconds": 0.11369825399970068,
+      "Predict_seconds": 0.04875729900004444,
+      "RMSE_gap": 9579.446524819006,
+      "Relative_to_dummy_RMSE_improvement_pct": 64.49932096848023
+    },
+    {
+      "Model": "KNeighborsRegressor",
+      "Train_RMSE": 0.003175123771492839,
+      "RMSE": 34184.20281217126,
+      "MAE": 19291.920840041817,
+      "R2": 0.8434549467849977,
+      "RMSLE": 0.15374528258814973,
+      "Fit_seconds": 0.11096943699976691,
+      "Predict_seconds": 0.23734336699999403,
+      "RMSE_gap": 34184.19963704749,
+      "Relative_to_dummy_RMSE_improvement_pct": 61.422691516631446
+    },
+    {
+      "Model": "HistGradientBoostingRegressor",
+      "Train_RMSE": 31297.96903136641,
+      "RMSE": 36644.32254227428,
+      "MAE": 18140.1712722926,
+      "R2": 0.8201121505163853,
+      "RMSLE": 0.14149600020476794,
+      "Fit_seconds": 0.8782490100002178,
+      "Predict_seconds": 0.05621390800024528,
+      "RMSE_gap": 5346.353510907873,
+      "Relative_to_dummy_RMSE_improvement_pct": 58.64641505186583
+    },
+    {
+      "Model": "GradientBoostingRegressor",
+      "Train_RMSE": 46569.14196845499,
+      "RMSE": 53014.240625723185,
+      "MAE": 27105.12104709539,
+      "R2": 0.6234925920097131,
+      "RMSLE": 0.21172675875810432,
+      "Fit_seconds": 0.3261587810002311,
+      "Predict_seconds": 0.06900499399989712,
+      "RMSE_gap": 6445.098657268194,
+      "Relative_to_dummy_RMSE_improvement_pct": 40.17275389257052
+    },
+    {
+      "Model": "DummyRegressor (median)",
+      "Train_RMSE": 81264.53061807592,
+      "RMSE": 88612.2027588025,
+      "MAE": 58271.191780821915,
+      "R2": -0.05190253274373369,
+      "RMSLE": 0.4177857411789756,
+      "Fit_seconds": 0.0,
+      "Predict_seconds": 0.0,
+      "RMSE_gap": 7347.672140726572,
+      "Relative_to_dummy_RMSE_improvement_pct": 0.0
+    }
+  ],
+  "tuned_models": [
+    {
+      "Model": "ElasticNet (Tuned)",
+      "RMSE": 24855.661951178718,
+      "MAE": 15376.306101096603,
+      "R2": 0.9172364514650779,
+      "RMSLE": 0.12022728646913564,
+      "CV_RMSE_mean": 39728.84718152985,
+      "CV_RMSE_std": 15890.4486933399,
+      "CV_train_RMSE_mean": 19047.56240536716,
+      "Search_seconds": 2.125935881999794,
+      "Candidates_evaluated": 3,
+      "Best_params": "{\"regressor__model__l1_ratio\": 0.2, \"regressor__model__alpha\": 0.001}"
+    },
+    {
+      "Model": "Ridge (Tuned)",
+      "RMSE": 25362.188730500366,
+      "MAE": 15209.586524451486,
+      "R2": 0.9138288486566843,
+      "RMSLE": 0.11913378541033065,
+      "CV_RMSE_mean": 41703.9171274989,
+      "CV_RMSE_std": 19210.70348689335,
+      "CV_train_RMSE_mean": 24903.711369467932,
+      "Search_seconds": 1.6157822060004037,
+      "Candidates_evaluated": 3,
+      "Best_params": "{\"regressor__model__alpha\": 28.48035868435799}"
+    }
+  ],
+  "selected_model": "ElasticNet",
+  "selected_params": {
+    "regressor__model__l1_ratio": 0.2,
+    "regressor__model__alpha": 0.001
+  },
+  "selection_policy": {
+    "primary_metric": "validation_RMSE",
+    "validation_tolerance": 0.02,
+    "ridge_tie_break_requires_cv_not_worse": true,
+    "uses_test": false,
+    "candidate_filter": "Predefined tuned candidates: ElasticNet and Ridge; test is unavailable during selection.",
+    "tie_breaker_order": [
+      "validation_RMSE",
+      "CV_RMSE_mean"
+    ],
+    "ridge_tie_break_rule": "Select Ridge only when its validation RMSE is within validation_tolerance of the best tuned validation RMSE and its CV RMSE mean is no worse.",
+    "locked_model": "ElasticNet",
+    "locked_params": {
+      "regressor__model__l1_ratio": 0.2,
+      "regressor__model__alpha": 0.001
+    },
+    "selection_locked_at_utc": "2026-08-26T11:51:17.424348+00:00"
+  },
+  "selection_basis": "Model duoc khoa truoc khi mo test; selection policy executable nam trong outputs/model_selection_policy.json va src/house_price/selection.py.",
+  "validation_metrics": {
+    "RMSE": 24855.661951178718,
+    "MAE": 15376.306101096603,
+    "R2": 0.9172364514650779,
+    "RMSLE": 0.12022728646913564
+  },
+  "selected_model_cv_stability": {
+    "CV_RMSE_mean": 39728.84718152985,
+    "CV_RMSE_std": 15890.4486933399,
+    "CV_MAE_mean": 16070.744103435174,
+    "CV_MAE_std": 1377.3747408159488,
+    "CV_R2_mean": 0.7236706820750918,
+    "CV_R2_std": 0.18203566268335455,
+    "CV_train_RMSE_mean": 19047.56240536716
+  },
+  "test_metrics": {
+    "RMSE": 22228.60309443587,
+    "MAE": 15452.339433784195,
+    "R2": 0.907628188218905,
+    "RMSLE": 0.11772471181677159
+  },
+  "test_bootstrap_ci": {
+    "RMSE_95CI": {
+      "lower": 18167.238154171355,
+      "upper": 26757.93165075122
+    },
+    "MAE_95CI": {
+      "lower": 12925.408730977479,
+      "upper": 18188.22628190603
+    },
+    "n_bootstrap": 300
+  },
+  "top_features": [
+    {
+      "Feature": "GrLivArea",
+      "Importance_mean": 9910.120445659142,
+      "Importance_std": 1840.312841078668,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "OverallQual",
+      "Importance_mean": 8734.330110696905,
+      "Importance_std": 2375.2878654276,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "Neighborhood",
+      "Importance_mean": 5256.709648157108,
+      "Importance_std": 2250.5956683257937,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "GarageCars",
+      "Importance_mean": 3076.4467296356656,
+      "Importance_std": 1148.7997326925497,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "LotArea",
+      "Importance_mean": 2269.5338311113837,
+      "Importance_std": 1749.5605443497634,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "YearBuilt",
+      "Importance_mean": 1777.6415329542892,
+      "Importance_std": 1522.1076211892366,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "KitchenQual",
+      "Importance_mean": 1730.0443341968657,
+      "Importance_std": 419.12272817401686,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "TotalBsmtSF",
+      "Importance_mean": 1321.189282246929,
+      "Importance_std": 620.1973495457553,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "YearRemodAdd",
+      "Importance_mean": 762.1004488503866,
+      "Importance_std": 571.3773719066775,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "GarageArea",
+      "Importance_mean": 699.447549478786,
+      "Importance_std": 338.41003642687286,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "2ndFlrSF",
+      "Importance_mean": 607.390557516004,
+      "Importance_std": 329.22824430933525,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "1stFlrSF",
+      "Importance_mean": 604.1267505180061,
+      "Importance_std": 338.36025171771036,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "FullBath",
+      "Importance_mean": 602.5712879819297,
+      "Importance_std": 625.4840689376949,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "Fireplaces",
+      "Importance_mean": 573.3546071925969,
+      "Importance_std": 736.1740130969646,
+      "Repeats": 20,
+      "Sample_size": 50
+    },
+    {
+      "Feature": "ExterQual",
+      "Importance_mean": 189.802735994035,
+      "Importance_std": 150.52541688462364,
+      "Repeats": 20,
+      "Sample_size": 50
+    }
+  ],
+  "top_errors": [
+    {
+      "Id": 775,
+      "ActualSalePrice": 395000,
+      "PredictedSalePrice": 291666.03836816474,
+      "Residual": 103333.96163183526,
+      "AbsoluteError": 103333.96163183526,
+      "AbsolutePercentageError": 26.1604966156545,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "NridgHt",
+      "OverallQual": 8,
+      "GrLivArea": 1973,
+      "YearBuilt": 2006
+    },
+    {
+      "Id": 179,
+      "ActualSalePrice": 501837,
+      "PredictedSalePrice": 426699.7682088578,
+      "Residual": 75137.2317911422,
+      "AbsoluteError": 75137.2317911422,
+      "AbsolutePercentageError": 14.972437622403728,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "StoneBr",
+      "OverallQual": 9,
+      "GrLivArea": 2234,
+      "YearBuilt": 2008
+    },
+    {
+      "Id": 378,
+      "ActualSalePrice": 340000,
+      "PredictedSalePrice": 266687.3099974666,
+      "Residual": 73312.69000253337,
+      "AbsoluteError": 73312.69000253337,
+      "AbsolutePercentageError": 21.56255588309805,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "Somerst",
+      "OverallQual": 8,
+      "GrLivArea": 2466,
+      "YearBuilt": 2004
+    },
+    {
+      "Id": 1443,
+      "ActualSalePrice": 310000,
+      "PredictedSalePrice": 374252.32747982786,
+      "Residual": -64252.32747982786,
+      "AbsoluteError": 64252.32747982786,
+      "AbsolutePercentageError": 20.726557251557374,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "Somerst",
+      "OverallQual": 10,
+      "GrLivArea": 2007,
+      "YearBuilt": 2008
+    },
+    {
+      "Id": 1169,
+      "ActualSalePrice": 235000,
+      "PredictedSalePrice": 176767.82191787963,
+      "Residual": 58232.17808212037,
+      "AbsoluteError": 58232.17808212037,
+      "AbsolutePercentageError": 24.779650247710798,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "Edwards",
+      "OverallQual": 6,
+      "GrLivArea": 2108,
+      "YearBuilt": 1935
+    },
+    {
+      "Id": 5,
+      "ActualSalePrice": 250000,
+      "PredictedSalePrice": 299110.23387179634,
+      "Residual": -49110.23387179634,
+      "AbsoluteError": 49110.23387179634,
+      "AbsolutePercentageError": 19.644093548718537,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "NoRidge",
+      "OverallQual": 8,
+      "GrLivArea": 2198,
+      "YearBuilt": 2000
+    },
+    {
+      "Id": 1212,
+      "ActualSalePrice": 164000,
+      "PredictedSalePrice": 210670.86770768077,
+      "Residual": -46670.867707680765,
+      "AbsoluteError": 46670.867707680765,
+      "AbsolutePercentageError": 28.45784616321998,
+      "PriceQuartile": "Q3",
+      "Neighborhood": "Gilbert",
+      "OverallQual": 8,
+      "GrLivArea": 1752,
+      "YearBuilt": 1988
+    },
+    {
+      "Id": 1038,
+      "ActualSalePrice": 287000,
+      "PredictedSalePrice": 240498.36551567368,
+      "Residual": 46501.63448432632,
+      "AbsoluteError": 46501.63448432632,
+      "AbsolutePercentageError": 16.202660099068407,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "CollgCr",
+      "OverallQual": 8,
+      "GrLivArea": 2263,
+      "YearBuilt": 2001
+    },
+    {
+      "Id": 865,
+      "ActualSalePrice": 250580,
+      "PredictedSalePrice": 206489.41178347266,
+      "Residual": 44090.588216527336,
+      "AbsoluteError": 44090.588216527336,
+      "AbsolutePercentageError": 17.595413926301916,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "Somerst",
+      "OverallQual": 7,
+      "GrLivArea": 1372,
+      "YearBuilt": 2007
+    },
+    {
+      "Id": 336,
+      "ActualSalePrice": 228950,
+      "PredictedSalePrice": 270718.80676926346,
+      "Residual": -41768.806769263465,
+      "AbsoluteError": 41768.806769263465,
+      "AbsolutePercentageError": 18.24363693787441,
+      "PriceQuartile": "Q4 - cao",
+      "Neighborhood": "Timber",
+      "OverallQual": 5,
+      "GrLivArea": 1786,
+      "YearBuilt": 1965
+    }
+  ],
+  "quartile_errors": [
+    {
+      "PriceQuartile": "Q1 - thấp",
+      "Count": 38,
+      "MAE": 10360.387154834922,
+      "Median_AE": 7556.778658861782,
+      "MAPE": 11.522744718462635
+    },
+    {
+      "PriceQuartile": "Q2",
+      "Count": 35,
+      "MAE": 9551.124951179125,
+      "Median_AE": 6455.402996933815,
+      "MAPE": 6.491080163576362
+    },
+    {
+      "PriceQuartile": "Q3",
+      "Count": 36,
+      "MAE": 14265.8988207812,
+      "Median_AE": 11862.027344827424,
+      "MAPE": 7.774817950758386
+    },
+    {
+      "PriceQuartile": "Q4 - cao",
+      "Count": 37,
+      "MAE": 27418.516611064122,
+      "Median_AE": 22806.617365268787,
+      "MAPE": 9.460142346774294
+    }
+  ],
+  "artifact": {
+    "path": "models/house_price_pipeline.joblib",
+    "canonical_only": true,
+    "end_to_end_raw_input": true,
+    "contains_feature_engineering": true,
+    "model_sha256": "5101114637e8001c91f06a42737cd3cc8ee143cb1d6a3a27631a41b48f3efcf1",
+    "schema_sha256": "069fa2f9049b4dc41d2448fe91a5ac8550f85a99d749b1dcb0932bf0553ad00b",
+    "reload_predictions": [
+      299110.23387179634,
+      136080.93488859604,
+      122819.32155552995
+    ]
+  },
+  "timing_seconds": {
+    "full_training_run": 19.512344086999747,
+    "final_fit_train_plus_validation": 0.2843881130002046,
+    "test_predict": 0.01888714799997615
+  },
+  "input_schema_feature_count": 79
+}
