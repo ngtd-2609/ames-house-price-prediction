@@ -1,7 +1,0 @@
-PPTX_QA_PASS
-Slides: 20
-slides_test.py: PASS / no overflow
-Full-deck montage inspected: yes
-Canonical note refs include test_summary.json: True
-Canonical note refs include coverage.json: True
-SHA256: 57609ddc3bb72a8202a200a8cfdc78863056a91449cc860cd1663150dda6b06e

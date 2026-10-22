@@ -11,11 +11,37 @@ import json
 from pathlib import Path
 import re
 import sys
+import zipfile
 from datetime import datetime
+from xml.etree import ElementTree
 
-import nbformat
+try:
+    import nbformat
+except ImportError:
+    class _NotebookCell(dict):
+        __getattr__ = dict.__getitem__
+
+    class _NotebookFormatFallback:
+        @staticmethod
+        def read(path, as_version=4):
+            del as_version
+            payload = json.loads(Path(path).read_text(encoding="utf-8"))
+            cells = []
+            for cell in payload.get("cells", []):
+                normalized = dict(cell)
+                if isinstance(normalized.get("source"), list):
+                    normalized["source"] = "".join(normalized["source"])
+                cells.append(_NotebookCell(normalized))
+            return _NotebookCell(
+                {**payload, "cells": cells}
+            )
+
+    nbformat = _NotebookFormatFallback()
 from docx import Document
-from pptx import Presentation
+try:
+    from pptx import Presentation
+except ImportError:
+    Presentation = None
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "outputs" / "audit"
@@ -57,12 +83,27 @@ def docx_text(path: Path) -> str:
 def pptx_text(path: Path) -> str:
     if not path.exists():
         return ""
+    if Presentation is None:
+        chunks: list[str] = []
+        with zipfile.ZipFile(path) as archive:
+            names = [
+                name for name in archive.namelist()
+                if (name.startswith("ppt/slides/slide") or name.startswith("ppt/notesSlides/notesSlide"))
+                and name.endswith(".xml")
+            ]
+            for name in names:
+                root = ElementTree.fromstring(archive.read(name))
+                chunks.extend(node.text or "" for node in root.iter() if node.tag.endswith("}t"))
+        return "\n".join(chunks)
     prs = Presentation(path)
     chunks: list[str] = []
     for slide in prs.slides:
         for shape in slide.shapes:
             if hasattr(shape, "text"):
                 chunks.append(shape.text)
+            if shape.has_table:
+                for row in shape.table.rows:
+                    chunks.extend(cell.text for cell in row.cells)
         try:
             chunks.append(slide.notes_slide.notes_text_frame.text)
         except Exception:
@@ -175,8 +216,8 @@ feature_count = str(summary.get("dataset", {}).get("input_features_raw", ""))
 split_tokens = [str(summary.get("dataset", {}).get(k, [""])[0]) for k in ["train_shape", "validation_shape", "test_shape"]]
 
 md_paths = [
-    "README.md", "DATA_CARD.md", "MODEL_CARD.md", "REPRODUCIBILITY.md", "QUALITY_AUDIT.md",
-    "FINAL_AUDIT_REPORT.md", "docs/ARCHITECTURE.md", "docs/DEMO_GUIDE.md", "docs/DEPLOYMENT.md", "DEFENSE_QA.md",
+    "README.md", "DATA_CARD.md", "MODEL_CARD.md", "REPRODUCIBILITY.md",
+    "docs/ARCHITECTURE.md", "docs/DEMO_GUIDE.md", "docs/DEPLOYMENT.md", "DEFENSE_QA.md",
 ]
 texts={rel:(ROOT/rel).read_text(encoding="utf-8",errors="ignore") if (ROOT/rel).exists() else "" for rel in md_paths}
 stale_patterns=[r"\b56 passed\b", r"\bcoverage\s*[:=]?\s*96%", r"\b47 tests?\b", r"\b91%\b"]
@@ -197,27 +238,29 @@ for rel,text in texts.items():
         stale.append(f"{rel}: coverage claim does not contain {coverage_display}")
 mark("STALE_REFERENCES", not stale, "; ".join(stale[:12]))
 
-for rel in ["README.md", "MODEL_CARD.md", "FINAL_AUDIT_REPORT.md"]:
+for rel in ["README.md", "MODEL_CARD.md"]:
     text=texts.get(rel,"")
     required=[expected_model, rmse_token]
     if rel != "MODEL_CARD.md": required += [passed_token, coverage_display]
     ok=all(str(token) in text for token in required if token)
     mark(rel.upper().replace(".","_"), ok, f"missing current canonical tokens in {rel}")
 
-report_path=ROOT/"reports"/"Bao_cao_Du_bao_Gia_nha_Hoan_chinh.docx"
+report_path=ROOT/"reports"/"Bao_cao_Hoc_may.docx"
 report=docx_text(report_path)
-report_required=[expected_model, rmse_token, val_rmse_token, passed_token, coverage_display, hash16, feature_count, *split_tokens]
-mark("DOCX", bool(report) and all(t in report for t in report_required if t), "report missing canonical model/metrics/tests/coverage/hash/features/splits")
+report_required=[expected_model, rmse_token, val_rmse_token, passed_token, coverage_display, hash16, feature_count]
+split_ok=all(t in report or f"{int(t):,}".replace(",", ".") in report for t in split_tokens if t)
+mark("DOCX", bool(report) and split_ok and all(t in report for t in report_required if t), "report missing canonical model/metrics/tests/coverage/hash/features/splits")
 
-ppt_path=ROOT/"slides"/"Slide_Du_bao_gia_nha_Hoan_chinh.pptx"
+ppt_path=ROOT/"slides"/"Slide_Hoc_may.pptx"
 ppt=pptx_text(ppt_path)
-ppt_required=[expected_model, rmse_token, passed_token, coverage_display, "Raw input", "AmesFeatureEngineer"]
+ppt=ppt.replace(coverage_display.replace(".", ","), coverage_display)
+ppt_required=[expected_model, rmse_token, passed_token, coverage_display, "Raw input", "Feature engineering", "ColumnTransformer"]
 mark("PPTX", bool(ppt) and all(t in ppt for t in ppt_required if t), "slides missing canonical testing/model/architecture evidence")
 
 for key in [
     "MODEL_NAME","HYPERPARAMETERS","VALIDATION_METRICS","TEST_METRICS","ARTIFACT_HASH","TEST_COUNT","SOURCE_COVERAGE",
     "IMPORTANT_MODULE_COVERAGE","AUDIT_EVIDENCE_FRESHNESS","NOTEBOOK_STATUS","NOTEBOOK_CELL_COUNTS","NOTEBOOK_MODEL_LOCK_PROTOCOL",
-    "SELECTION_POLICY_CODE_VS_JSON","README_MD","MODEL_CARD_MD","FINAL_AUDIT_REPORT_MD","DOCX","PPTX","STALE_REFERENCES",
+    "SELECTION_POLICY_CODE_VS_JSON","README_MD","MODEL_CARD_MD","DOCX","PPTX","STALE_REFERENCES",
 ]:
     print(f"{key}: {'PASS' if STATUS.get(key) else 'FAIL'}")
 

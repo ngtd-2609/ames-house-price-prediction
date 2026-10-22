@@ -51,8 +51,9 @@ summary={
 cov=json.loads(raw.read_text(encoding="utf-8"))
 files={}
 for path,item in sorted(cov["files"].items()):
-    if path.startswith("src/house_price/") or path.startswith("backend/"):
-        files[path]={
+    normalized_path=path.replace("\\", "/").lstrip("./")
+    if normalized_path.startswith("src/house_price/") or normalized_path.startswith("backend/"):
+        files[normalized_path]={
             "statements":item["summary"]["num_statements"],
             "missing":item["summary"]["missing_lines"],
             "coverage_pct":item["summary"]["percent_covered"],

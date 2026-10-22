@@ -1,23 +1,23 @@
 Name                                Stmts   Miss  Cover   Missing
 -----------------------------------------------------------------
-backend/__init__.py                     2      0   100%
-backend/service.py                     32      0   100%
-src/house_price/__init__.py             4      0   100%
-src/house_price/artifacts.py           28      0   100%
-src/house_price/config.py              11      0   100%
-src/house_price/data.py                29      0   100%
-src/house_price/diagnostics.py         81      0   100%
-src/house_price/eda.py                102      0   100%
-src/house_price/evaluation.py          22      0   100%
-src/house_price/explainability.py      39      0   100%
-src/house_price/features.py            53      0   100%
-src/house_price/modeling.py            24      0   100%
-src/house_price/plotting.py            10      0   100%
-src/house_price/predict.py             37      0   100%
-src/house_price/preprocessing.py       16      0   100%
-src/house_price/reporting.py           67      0   100%
-src/house_price/selection.py           54      0   100%
-src/house_price/tuning.py              71      0   100%
-src/house_price/validation.py          24      1    96%   28
+backend\__init__.py                     2      0   100%
+backend\service.py                     32      0   100%
+src\house_price\__init__.py             4      0   100%
+src\house_price\artifacts.py           28      0   100%
+src\house_price\config.py              11      0   100%
+src\house_price\data.py                29      0   100%
+src\house_price\diagnostics.py         81      0   100%
+src\house_price\eda.py                116      0   100%
+src\house_price\evaluation.py          22      0   100%
+src\house_price\explainability.py      39      0   100%
+src\house_price\features.py            53      0   100%
+src\house_price\modeling.py            24      0   100%
+src\house_price\plotting.py            10      0   100%
+src\house_price\predict.py             42      1    98%   26
+src\house_price\preprocessing.py       16      0   100%
+src\house_price\reporting.py           67      0   100%
+src\house_price\selection.py           54      0   100%
+src\house_price\tuning.py              71      0   100%
+src\house_price\validation.py          24      1    96%   28
 -----------------------------------------------------------------
-TOTAL                                 706      1    99%
+TOTAL                                 725      2    99%

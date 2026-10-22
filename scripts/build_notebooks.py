@@ -1,4 +1,5 @@
 """Build Detailed and Basic notebooks with an explicit model-lock/test-unlock protocol."""
+import argparse
 from pathlib import Path
 import nbformat as nbf
 
@@ -160,6 +161,11 @@ for nb in (detailed, basic):
     nb.metadata.kernelspec = {"display_name": "Python 3", "language": "python", "name": "python3"}
     nb.metadata.language_info = {"name": "python"}
 
-nbf.write(detailed, NB_DIR / "House_Price_Prediction_Detailed.ipynb")
-nbf.write(basic, NB_DIR / "House_Price_Prediction_Basic.ipynb")
-print("NOTEBOOKS_BUILT", len(detailed.cells), len(basic.cells))
+parser = argparse.ArgumentParser()
+parser.add_argument("--only", choices=("both", "detailed", "basic"), default="both")
+args = parser.parse_args()
+if args.only in ("both", "detailed"):
+    nbf.write(detailed, NB_DIR / "House_Price_Prediction_Detailed.ipynb")
+if args.only in ("both", "basic"):
+    nbf.write(basic, NB_DIR / "House_Price_Prediction_Basic.ipynb")
+print("NOTEBOOKS_BUILT", args.only, len(detailed.cells), len(basic.cells))

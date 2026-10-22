@@ -24,7 +24,7 @@ if uploaded is not None:
         if 'SalePrice' in frame.columns: st.warning('SalePrice sẽ bị loại trước khi dự báo để tránh dùng target làm input.')
         if extra: st.info('Cột dư được giữ ở output nhưng không đi vào model: '+', '.join(extra[:20]))
         if st.button('Chạy dự báo',type='primary',disabled=bool(missing) or frame.empty):
-            result=predict_batch(frame); st.dataframe(result.head(20),use_container_width=True)
+            result=predict_batch(frame); st.dataframe(result.head(20),width='stretch')
             buffer=io.StringIO(); result.to_csv(buffer,index=False)
             st.download_button('Tải kết quả',buffer.getvalue(),'house_predictions.csv','text/csv')
     except Exception as exc:

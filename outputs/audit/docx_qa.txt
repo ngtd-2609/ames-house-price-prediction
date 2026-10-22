@@ -1,7 +1,0 @@
-DOCX_QA_PASS
-Pages rendered/inspected: 26
-Word count (approx): 6389
-A4: yes
-TOC title excluded from TOC entries: verified visually
-Placeholder/markdown-artifact hits: []
-SHA256: eb09939c9ea1e816902568eb2f116ddc4d8111c8bbcb069d94965b6f9afcd782

@@ -1,9 +1,61 @@
+# Python and local environments
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
 venv/
+.coverage
+.coverage.*
+*.egg-info/
+.ipynb_checkpoints/
+node_modules/
 .DS_Store
+Thumbs.db
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
 .streamlit/secrets.toml
-outputs/tmp/
+
+# Temporary files and editor locks
 *.log
+~$*
+*.tmp
+outputs/tmp/
+outputs/edge_qa_profile/
+outputs/audit/*
+!outputs/audit/test_summary.json
+!outputs/audit/coverage.json
+!outputs/audit/pytest_final.txt
+!outputs/audit/coverage_final.txt
+outputs/figures/equations/
+outputs/figures/streamlit/
+reports/qa*/
+
+# Local drafts and authoring tools
+_build*/
+tmp/
+PROMPT_*.md
+*CHECKLIST*.md
+HUONG_DAN_TICH_HOP_*.md
+CHANGELOG.md
+FINAL_AUDIT_REPORT.md
+QUALITY_AUDIT.md
+OLD_VS_FINAL_CONTENT_AUDIT.md
+docs/MODEL_CARD.md
+frontend/
+package.json
+scripts/build_report*.py
+scripts/build_slides.*
+scripts/audit_report_docx.py
+scripts/capture_streamlit_screenshots.cjs
+scripts/make_docx_contact_sheets.py
+reports/Bao_cao_Du_bao_Gia_nha_*.docx
+reports/Bao_cao_Du_bao_Gia_nha_*.pdf
+slides/Slide_Du_bao_gia_nha_Hoan_chinh.pptx
+
+# Separate member handoffs
+BAN_GIAO_*/
+tdBAN_GIAO_*/
+_handoff_qa/

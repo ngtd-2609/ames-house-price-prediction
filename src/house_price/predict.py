@@ -19,10 +19,15 @@ def prepare_raw_frame(frame: pd.DataFrame, schema: dict, *, strict_numeric: bool
     for field in schema["fields"]:
         name = field["name"]
         if field["kind"] == "number":
-            original_nonblank = result[name].notna() & (result[name].astype(str).str.strip() != "")
-            converted = pd.to_numeric(result[name], errors="coerce")
-            if strict_numeric and (original_nonblank & converted.isna()).any():
-                bad = result.loc[original_nonblank & converted.isna(), name].astype(str).head(3).tolist()
+            raw_text = result[name].astype("string").str.strip()
+            missing_tokens = raw_text.str.lower().isin({"", "na", "n/a", "none", "null", "missing", "nan"})
+            missing = result[name].isna() | missing_tokens
+            if missing.any() and not field.get("nullable", False):
+                raise ValueError(f"Cot {name} khong duoc de trong")
+            converted = pd.to_numeric(result[name].mask(missing), errors="coerce")
+            invalid_numeric = ~missing & converted.isna()
+            if strict_numeric and invalid_numeric.any():
+                bad = result.loc[invalid_numeric, name].astype(str).head(3).tolist()
                 raise ValueError(f"Cot {name} co gia tri khong phai so: {bad}")
             min_value, max_value = field.get("min"), field.get("max")
             if min_value is not None and max_value is not None:

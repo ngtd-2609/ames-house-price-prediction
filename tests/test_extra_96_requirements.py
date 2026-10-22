@@ -74,6 +74,10 @@ def test_no_duplicate_joblib_artifacts_remain():
     rel = [
         p.relative_to(PROJECT_ROOT).as_posix()
         for p in joblibs
+        # Temporary test artifacts and installed dependencies are not deliverables.
+        if not p.relative_to(PROJECT_ROOT).as_posix().startswith(
+            ("outputs/tmp/", ".venv/", "venv/", "node_modules/")
+        )
     ]
 
     assert rel == ["models/house_price_pipeline.joblib"]

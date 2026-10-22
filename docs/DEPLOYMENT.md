@@ -48,7 +48,7 @@ The app reads a pre-trained artifact. It must not retrain the model during servi
 
 ## 6. Current environment note
 
-In the current container, Streamlit executable was unavailable, so UI launch is not marked PASS. This is documented rather than hidden.
+Ứng dụng đã được launch và kiểm tra cục bộ ngày 09/09/2026. Home, dự báo nhanh, biểu mẫu 79 biến và trang thông tin mô hình hoạt động; backend batch xử lý thành công tệp CSV mẫu gồm 5 dòng và 79 biến. Trạng thái này xác nhận local smoke test, không đồng nghĩa đã có URL public trên Streamlit Community Cloud.
 
 
 ## Current canonical model

@@ -197,5 +197,5 @@ Nghĩa là feature engineering, preprocessing, selection policy, diagnostics và
 ### Làm sao chứng minh training script chỉ còn orchestration?
 Mở `scripts/train_full_project.py`: file chỉ có `load_and_validate_project_data()` và `main()`. Test `test_training_script_is_orchestration_only_after_refactor` parse AST để đảm bảo không còn các hàm cũ như `create_eda`, `tune_candidates` hoặc `final_evaluation` trong script.
 
-### Vì sao source coverage 99.9% không đồng nghĩa không có bug?
+### Vì sao source coverage 99.7% không đồng nghĩa không có bug?
 Coverage chỉ đo dòng code đã chạy, không đo chất lượng assertion. Vì vậy project bổ sung test có ý nghĩa: selection policy, leakage order, artifact raw input, diagnostics, consistency and backend errors. Coverage cao là bằng chứng hỗ trợ, không phải sự đảm bảo tuyệt đối.

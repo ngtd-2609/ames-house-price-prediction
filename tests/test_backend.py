@@ -1,6 +1,7 @@
 import pandas as pd
 import pytest
 from backend.service import load_assets,predict_batch,predict_one,validate_batch_frame
+from house_price.config import PROJECT_ROOT
 from house_price.data import load_house_data
 
 def batch(n=3): return load_house_data('house_test_10.csv').drop(columns=['SalePrice']).head(n)
@@ -23,3 +24,8 @@ def test_batch_rejects_missing_required_column():
 def test_batch_rejects_empty():
     _,schema,_=load_assets()
     with pytest.raises(ValueError,match='không có dòng|khong co dong'): validate_batch_frame(pd.DataFrame(),schema)
+
+def test_downloadable_sample_csv_runs_end_to_end():
+    frame=pd.read_csv(PROJECT_ROOT/'data'/'house_input_sample.csv',keep_default_na=False)
+    out=predict_batch(frame)
+    assert len(out)==len(frame) and out['PredictedSalePrice'].notna().all()

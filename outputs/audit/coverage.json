@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-08-26T17:44:33.954690+00:00",
+  "generated_at_utc": "2026-10-22T10:26:33.504592+00:00",
   "scope": [
     "src/house_price",
     "backend"
   ],
-  "total_statements": 706,
-  "total_missing": 1,
-  "total_coverage": 99.85835694050992,
-  "display_coverage": 99.9,
+  "total_statements": 725,
+  "total_missing": 2,
+  "total_coverage": 99.72413793103448,
+  "display_coverage": 99.7,
   "files": {
     "backend/__init__.py": {
       "statements": 2,
@@ -45,7 +45,7 @@
       "coverage_pct": 100.0
     },
     "src/house_price/eda.py": {
-      "statements": 102,
+      "statements": 116,
       "missing": 0,
       "coverage_pct": 100.0
     },
@@ -75,9 +75,9 @@
       "coverage_pct": 100.0
     },
     "src/house_price/predict.py": {
-      "statements": 37,
-      "missing": 0,
-      "coverage_pct": 100.0
+      "statements": 42,
+      "missing": 1,
+      "coverage_pct": 97.61904761904762
     },
     "src/house_price/preprocessing.py": {
       "statements": 16,

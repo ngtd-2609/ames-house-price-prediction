@@ -1,5 +1,0 @@
-PDF_QA_PASS
-Pages rendered with PDF renderer: 26
-Pixel compare against final Word-render PDF: 0 changed pages
-No clipping/overlap/broken glyph observed in inspected render.
-SHA256: 6549676727e504958748916ea661d9cfc8f9087d420b5a4e48620f1e5e6b8552

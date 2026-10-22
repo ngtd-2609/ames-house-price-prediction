@@ -19,8 +19,8 @@ def field_input(field:dict,key_prefix:str):
         idx=options.index(field['default']) if field['default'] in options else 0
         chosen=st.selectbox(label,display,index=idx,key=f'{key_prefix}_{name}',help=help_text)
         return options[display.index(chosen)]
-    default=float(field['default']); lo=float(field['min']); hi=float(field['max']); integer_like=all(float(field[x]).is_integer() for x in ('min','max','default'))
-    if integer_like: return st.number_input(label,min_value=int(lo),max_value=int(hi),value=int(default),step=1,key=f'{key_prefix}_{name}',help=help_text)
+    default=float(field['default']); lo=float(field['min']); hi=float(field['max']); integer_like=lo.is_integer() and hi.is_integer()
+    if integer_like: return st.number_input(label,min_value=int(lo),max_value=int(hi),value=int(round(default)),step=1,key=f'{key_prefix}_{name}',help=help_text)
     return st.number_input(label,min_value=lo,max_value=hi,value=default,key=f'{key_prefix}_{name}',help=help_text)
 
 quick_fields=['OverallQual','GrLivArea','Neighborhood','GarageCars','LotArea','TotalBsmtSF','1stFlrSF','YearBuilt','YearRemodAdd','FullBath','TotRmsAbvGrd','KitchenQual','ExterQual','GarageArea','Fireplaces']
@@ -32,7 +32,7 @@ with tab_quick:
         cols=st.columns(3); values=defaults.copy()
         for i,name in enumerate(quick_fields):
             with cols[i%3]: values[name]=field_input(field_map[name],'quick')
-        submitted=st.form_submit_button('Dự báo giá',use_container_width=True)
+        submitted=st.form_submit_button('Dự báo giá',width='stretch')
     if submitted:
         try:
             predicted=predict_one(values); st.success(f'Giá bán ước lượng: **{money(predicted)}**')
@@ -49,7 +49,7 @@ with tab_full:
                 cols=st.columns(2)
                 for i,field in enumerate(group):
                     with cols[i%2]: values[field['name']]=field_input(field,'full')
-        submitted_full=st.form_submit_button('Dự báo từ 79 biến',use_container_width=True)
+        submitted_full=st.form_submit_button('Dự báo từ 79 biến',width='stretch')
     if submitted_full:
         try: st.success(f'Giá bán ước lượng: **{money(predict_one(values))}**')
         except Exception as exc: st.error(f'Không thể dự báo: {exc}')
